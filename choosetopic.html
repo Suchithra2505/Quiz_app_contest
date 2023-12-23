@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChooseTopic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="background-color: whitesmoke;" >
+        <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "verdana" size =" 5"><img src="QuizGrad.png"></font><br /></a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav">
+    
+            </div>
+    
+            <div class="navbar-nav">
+              <a style="padding-left: 30px; color:grey;" href="" class="nav-item nav-link"> How it works</a>
+              <a href="" style="color:grey;" class="nav-item nav-link">Features</a>
+              <a href="" style="color:grey;"class="nav-item nav-link">About Us</a>
+              <a href="" style="color:orange;"class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginBtn">Suchithra</a>
+    
+            </div>
+    
+    
+    
+    
+          </div>
+        </nav>
+      </div>
+    <br><br><br><br><br><br><br><br><br>
+<!-- hero section-->
+<div class="container">
+    <marquee><h6 style="color:blueviolet"><b>Heyyy Welcome to the world of Knowledge!!!!!!!!!!!!!!!</b></h6></marquee>
+    <div class="row mt-10">
+        <!-- First Column -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Learn new concepts for each question</h2>
+                    <p class="card-text"><img src="Line 2.png"/>We help you prepare for exams and quizes </p>
+                    <button type="button" class="btn btn-warning" style="color: #ffffff;" data-toggle="modal" data-target="#myModal">Start Solving</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="Group 118.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- myModal -->
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Choose your favorite topic</h5><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <p id="p1"><center>Select more than 5 topics to start quiz</center></p>
+            <div class="modal-body">
+                
+               <div id="div1">
+                <button type="button" id="countButton" class="ct" >General Knowledge</button>
+                <button type="button" id="countButton1" class="ct">Science and Technology</button>
+                <button type="button" id="countButton2" class="ct">Mathematic and QAT</button>
+                <button type="button" id="countButton3" class="ct">History and Emporers</button>
+                <button type="button" id="countButton4" class="ct" >Civil Engg</button>
+            </div><br>
+            <div id="div2">
+                <button type="button" id="countButton5" class="ct">Artificial Intelligence</button>
+                <button type="button" id="countButton6" class="ct">Architecture & Exacavations</button>
+                <button type="button" id="countButton7" class="ct">Arts</button>
+                <button type="button" id="countButton8" class="ct">Anthrapology</button>
+                <button type="button" id="countButton9" class="ct">Civics and Constitution</button>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-warning" style="color: #ffffff;" onclick="startquiz()">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+  <!-- Include Bootstrap JS and Popper.js (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    
+        // Event listener for button click
+        document.getElementById('countButton').addEventListener('click', function() {
+            // Access the button element
+            var button = this;
+
+            // Change button styles
+            button.style.backgroundColor = 'red';
+            button.style.color = 'white';
+            // Add more style modifications as needed
+        });
+    </script>
+    <script>
+        document.getElementById('countButton1').addEventListener('click', function() {
+    // Access the button element
+    var button = this;
+
+    // Change button styles
+    button.style.backgroundColor = 'red';
+    button.style.color = 'white';
+    // Add more style modifications as needed
+});
+    </script>
+    <script>document.getElementById('countButton2').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });
+    </script>
+    <script>document.getElementById('countButton3').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });
+    </script>
+    <script>document.getElementById('countButton4').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });</script>
+    <script>document.getElementById('countButton5').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });</script>
+    <script>document.getElementById('countButton6').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });</script>
+    <script>document.getElementById('countButton7').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });</script>
+    <script>document.getElementById('countButton8').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });
+    </script>
+    <script>document.getElementById('countButton9').addEventListener('click', function() {
+        // Access the button element
+        var button = this;
+    
+        // Change button styles
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        // Add more style modifications as needed
+    });
+    </script>
+    
+    <script>
+        // Initialize click count
+        let clickCount = 0;
+
+        // Event listener for button click
+        document.getElementById("countButton").addEventListener('click', function() {
+            // Increment click count
+            clickCount++;
+
+            // Display the updated click count
+            //document.getElementById('clickCount').innerText = clickCount;
+            if(clickCount<5)
+              alert("Please select 5 Categories so that you will be eligible to continue!!!!!!!");
+            
+        });
+       
+    </script>
+
+<script>
+    function startquiz() {
+        window.location.href='exam.html';
+    }
+</script>
+</body>
+</html>

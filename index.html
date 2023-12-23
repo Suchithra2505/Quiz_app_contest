@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ_APP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="background-color: whitesmoke;" >
+        <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "verdana" size =" 5"><img src="QuizGrad.png"></font><br /></a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav">
+    
+            </div>
+    
+            <div class="navbar-nav">
+              <a style="padding-left: 30px; color:grey;" href="" class="nav-item nav-link" data-toggle="modal" data-target="#myModal2"> How it works</a>
+              <a href="" style="color:grey;" class="nav-item nav-link" data-toggle="modal" data-target="#myModal4">Features</a>
+              <a href="" style="color:grey;"class="nav-item nav-link"data-toggle="modal" data-target="#myModal3">About Us</a>
+              <a href="" style="color:grey;"class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginBtn">Login</a>
+    
+            </div>
+    
+    
+    
+    
+          </div>
+        </nav>
+      </div>
+    <br><br><br><br><br><br><br><br><br>
+<!-- hero section-->
+<div class="container">
+    <div class="row mt-10">
+        <!-- First Column -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Learn new concepts for each question</h2>
+                    <p class="card-text"><img src="Line 2.png"/>We help you prepare for exams and quizes </p>
+                    <button type="button" class="btn btn-warning" style="color: #ffffff;" data-toggle="modal" data-target="#myModal1">Start Solving</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="Group 118.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeBtn">&times;</span>
+        <h2>Login</h2>
+        <!-- Add your login form here -->
+        <form  action="choosetopic.html" method="POST" autocomplete="on">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="checkLogin()">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- myModal1 -->
+<div class="modal " id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Please Login before you proceed</h6><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body"><p>For the non-registred candidate use the default username & password 'admin'...thank you!! </p></div></div>
+        </div>
+    </div>
+    </div>
+ <!-- myModal2 -->
+ <div class="modal " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">The system contains question based on Topics</h6><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body"><p style="color:green" font-weight="400"><i>Categories of Quiz:
+                Each categoryPage represents a different topic of the quiz (e.g., General Knowledge, Science, Mathematics), and the Question Components display the question and possible answers. </i></p></div></div>
+        </div>
+    </div>
+    </div>   
+
+<!-- myModal2 -->
+<div class="modal " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">The system contains features shown below:</h6><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body"><p style="color:blue" font-weight="400"><i>functionality to navigate through the questions and store the user's answers. We'll use JavaScript control structures like loops and conditional statements to achieve this.
+                When the button is clicked, we first check if the user has selected an option. If an option is selected, we store the user's answer, move to the next question or section, and display the next question. If there are no more sections, we end the quiz. If an option is not selected, we alert the user to select an option. </i></p></div></div>
+        </div>
+    </div>
+    </div>  
+ <!-- myModal3 -->   
+ <div class="modal " id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">QuizGrad :</h6><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body"><p style="color:red" font-weight="400"><i>Author: Hege Refsnes<br><a href="mailto:hege@example.com">hege@example.com</a> </i></p></div></div>
+        </div>
+    </div>
+    </div>    
+<!-- myModal4 -->   
+<div class="modal " id="myModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">The system contains features shown below:</h6><br>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body"><p style="color:blue" font-weight="400"><i>functionality to navigate through the questions and store the user's answers. We'll use JavaScript control structures like loops and conditional statements to achieve this.
+                When the button is clicked, we first check if the user has selected an option. If an option is selected, we store the user's answer, move to the next question or section, and display the next question. If there are no more sections, we end the quiz. If an option is not selected, we alert the user to select an option. </i></p></div></div>
+        </div>
+    </div>
+    </div>       
+    
+ <!-- Include Bootstrap JS and Popper.js  -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script>
+ function checkLogin() {
+    // Get the values entered in the username and password fields
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Check if the username and password are both 'admin'
+    if (username === 'admin' && password === 'admin') {
+        
+        window.location.href='choosetopic.html';
+    } else {
+        // Display an alert for unsuccessful login 
+        alert('Invalid username or password. Please try again.');
+    }
+}</script>
+</body>
+</html>

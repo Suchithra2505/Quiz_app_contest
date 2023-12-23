@@ -1,0 +1,131 @@
+.navabar-nav{
+    
+color:grey;
+    font-family: Poppins;
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.card-body>h1{
+    font-family: Roboto;
+font-size: 37px;
+font-weight: 500;
+line-height: 44px;
+letter-spacing: 0em;
+text-align: left;
+
+font-family: Averta-Semibold;
+font-size: 37px;
+line-height: 44px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.card-text{
+
+font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+width: 261.84px;
+height: 16.26px;
+top: 313.51px;
+left: 117.27px;
+color: #828282;
+
+}
+
+
+#loginBtn {
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-header>h5{
+    font-family: Roboto;
+font-size: 37px;
+font-weight: 500;
+line-height: 44px;
+letter-spacing: 0em;
+text-align: left;
+color: #333333;
+width: 437.17px;
+height: 43.54px;
+top: 153.27px;
+left: 199.14px;
+
+
+}
+#p1{
+    width: 257.99px;
+height: 17.42px;
+top: 217.71px;
+left: 289.12px;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+color: #333333;
+
+
+}
+#div1>button,#div2>button{
+    width: Fixed (98.12px);
+height: Fixed (26.13px);
+top: 262.42px;
+left: 379.69px;
+padding: 0px, 0px, 0px, 8.18px;
+gap: 13.63px;
+background-color: #FCC822;
+color:#333333
+
+
+}
+#div1, #div2{
+    display:flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+@media screen and (max-width: 995px) {
+    .modal-body>#div1>button, .modal-body>#div2>button{
+          display:block;
+    }
+    .modal{
+        height:75%;
+        margin:5% auto;
+        max-height: 57em;
+       max-width:66em;
+       width:85%;
+    }
+}

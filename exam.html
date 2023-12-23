@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .quiz-container {
+            display:flex;
+            justify-content: space-around;
+            width: 80vw;
+            height: 80vh;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .category {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .quiz-navigation {
+            margin-top: 220px;
+            display: flex;
+            justify-content:flex-start;
+            gap:50px;
+            align-items: center;
+            padding-left: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="background-color: whitesmoke;" >
+        <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "verdana" size =" 5"><img src="QuizGrad.png"></font><br /></a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav">
+    
+            </div>
+    
+            <div class="navbar-nav">
+              <a style="padding-left: 30px; color:grey;" href="" class="nav-item nav-link"> How it works</a>
+              <a href="" style="color:grey;" class="nav-item nav-link">Features</a>
+              <a href="" style="color:grey;"class="nav-item nav-link">About Us</a>
+              <a href="" style="color:orange;"class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginBtn">Suchithra</a>
+    
+            </div>
+    
+          </div>
+        </nav>
+      </div>
+    <br><br><br><br><br><br><br><br><br>
+
+    <!--<div class="quiz-container">
+         Quiz Content will be dynamically generated here 
+        <div id="quizContent"></div>
+        <div class="quiz-navigation">
+            <button type="button" class="btn btn-primary" id="nextButton" onclick="nextQuestion()">Previous</button>
+            <button type="button" class="btn btn-primary" id="nextButton" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>-->
+
+    <div class="container mt-5">
+        <div id="quizContainer">
+            <!-- Quiz Content will be dynamically generated here -->
+        </div>
+        <div id="quizNavigation" class="mt-3">
+            <button type="button" class="btn " id="nextButton" onclick="prevQuestion()">Previous</button>
+            <button type="button" style="color:#f8f9fa;" class="btn btn-warning" id="nextButton" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let quizData = [
+            {
+                "category": "General Knowledge",
+                "questions": [
+                    {
+                        "question": "Who wrote 'To Kill a Mockingbird'?",
+                        "options": ["Harper Lee", "George Orwell", "Jane Austen", "F. Scott Fitzgerald"],
+                        "answer": "Harper Lee"
+                    },
+                    {
+                        "question": "What is the tallest mountain in the world?",
+                        "options": ["K2", "Mount Everest", "Kilimanjaro", "Mount Fuji"],
+                         "answer": "Mount Everest"
+                    },
+                ]
+                    // Add more questions...
+                    
+                
+                    
+                
+                    
+                
+                
+            },
+            {
+                "category": "Mathematics",
+                "questions": [
+                    {
+                        "question": "What is the square root of 144?",
+                        "options": ["12", "14", "16", "18"],
+                        "answer": "12"
+                    },
+                    {
+                        "question": "What is smallest prime number?",
+                        "options": ["0", "2", "1", "infinity"],
+                        "answer": "2"
+                    },
+                    // Add more questions...
+                    
+                
+                    
+                ]
+                
+            },
+
+            {
+                "category": "History & Geography",
+                "questions": [
+                    {
+                        "question": "In which year did World War II end?",
+                        "options": ["1945", "1477", "1355", "1877"],
+                        "answer": "1945"
+                    },
+                    {
+                    "question": "Which country is home to the kangaroo?",
+                     "options": ["New Zealand", "South Africa", "Australia", "Canada"],
+                     "answer": "Australia"
+                    },
+                ]
+                    // Add more questions...
+                    
+                
+                    
+                
+                
+            },
+            // Add more categories...
+        ];
+
+        let currentCategoryIndex = 0;
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let userScore = 0;
+
+        function createQuiz() {
+            let quizContainer = document.getElementById('quizContainer');
+            quizContainer.innerHTML = ''; // Clear previous content
+
+            let currentCategory = quizData[currentCategoryIndex];
+            let currentQuestion = currentCategory.questions[currentQuestionIndex];
+
+            // Create category heading
+            let categoryHeading = document.createElement('div');
+            categoryHeading.className = 'category';
+            categoryHeading.textContent = currentCategory.category;
+            quizContainer.appendChild(categoryHeading);
+
+            // Create question
+            let questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.innerHTML = `<p>${currentQuestionIndex + 1}. ${currentQuestion.question}</p>`;
+
+            // Create options
+            let optionsDiv = document.createElement('div');
+            optionsDiv.className = 'options';
+
+            currentQuestion.options.forEach(option => {
+                let label = document.createElement('label');
+                let radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'options';
+                radio.value = option;
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(option));
+                optionsDiv.appendChild(label);
+            });
+
+            questionDiv.appendChild(optionsDiv);
+            quizContainer.appendChild(questionDiv);
+        }
+
+        function nextQuestion() {
+            let selectedOption = document.querySelector('input[name="options"]:checked');
+
+            if (selectedOption) {
+                let currentQuestion = quizData[currentCategoryIndex].questions[currentQuestionIndex];
+                let userAnswer = selectedOption.value;
+
+                // Check if the user's answer is correct
+                if (userAnswer === currentQuestion.answer) {
+                    userScore++;
+                }
+
+                userAnswers.push({ question: currentQuestion.question, answer: userAnswer });
+
+                if (currentQuestionIndex < quizData[currentCategoryIndex].questions.length - 1) {
+                    // Move to the next question in the current category
+                    currentQuestionIndex++;
+                } else if (currentCategoryIndex < quizData.length - 1) {
+                    // Move to the next category
+                    currentCategoryIndex++;
+                    currentQuestionIndex = 0;
+                } else {
+                    // End of the quiz
+                    endQuiz();
+                    return;
+                }
+
+                // Display the next question
+                createQuiz();
+            } else {
+                alert('Please select an option before moving to the next question.');
+            }
+        }
+
+        function endQuiz() {
+            alert(`End of the quiz. Your score: ${userScore}/${calculateTotalScore()}. Thank you for participating!`);
+            console.log('User Answers:', userAnswers);
+            // You can perform additional actions here, such as showing the results page.
+        }
+
+        function calculateTotalScore() {
+            // In this example, each question is worth one point
+            return quizData.reduce((totalScore, category) => {
+                return totalScore + category.questions.length;
+            }, 0);
+        }
+
+        // Call the function to create the quiz on page load
+        document.addEventListener('DOMContentLoaded', createQuiz);
+    </script>
+
+</body>
+</html>
