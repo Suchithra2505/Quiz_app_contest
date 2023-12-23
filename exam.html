@@ -96,6 +96,8 @@
         <div id="quizNavigation" class="mt-3">
             <button type="button" class="btn " id="nextButton" onclick="prevQuestion()">Previous</button>
             <button type="button" style="color:#f8f9fa;" class="btn btn-warning" id="nextButton" onclick="nextQuestion()">Next</button>
+            <br>
+            <button type="button" style="color:#f8f9fa;" class="btn btn-warning" id="submitBtn" onclick="nextQuestion()"></button>
         </div>
     </div>
 
@@ -250,9 +252,10 @@
         }
 
         function endQuiz() {
-            alert(`End of the quiz. Your score: ${userScore}/${calculateTotalScore()}. Thank you for participating!`);
+            
             console.log('User Answers:', userAnswers);
-            // You can perform additional actions here, such as showing the results page.
+            document.getElementById('submitBtn').innerText = 'SCORE: ' + userScore;
+            alert(`End of the quiz. Your score: ${userScore}/${calculateTotalScore()}. Thank you for participating!`);
         }
 
         function calculateTotalScore() {
